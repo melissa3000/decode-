@@ -1,0 +1,108 @@
+# 2xyz would be decoded as z
+# 0h2zyi2467 would be hi7
+
+
+
+
+
+# create a function called plaintext that decodes a string
+
+
+def plaintext():
+	encoded = raw_input("Enter encoded text: ")
+	
+	result = " " # creates empty string called result
+	
+	for val in encoded:
+		if (ord(val) >= 48 and ord(val) <= 57): #uses unicode to refer to 0-9 (unicode 
+		#lets you skip the issue of int vs string)
+			skip = int(val) # skip equals val converted to an integer (pulls the number out
+			#of the string and turns it into an integer)
+			
+		else:
+			if skip == 0:
+				result = result + val
+				
+			else:
+				skip = skip - 1 #counts down until the value is 0 then prints the result
+				continue
+ 
+ #How do I get it to print the 7 in the example at the top of the page?
+	
+	print result
+	
+plaintext()
+
+
+	
+	
+# Code below that didn't work commented out so I can remember what I tried as I'm learning
+	
+# -----------------------------------
+	#skip = 0 # sets the value for skip to zero, so it can be added to the value of
+	# the number in the encoded string 
+	
+	# import re module so that numbers and letters can be separated later
+#import re
+	
+	#if val >= 0 and val <= 9: # this doesn't work - has to use unicode
+	
+	#print list(encoded) # breaks input into individual characters and prints list
+	
+	#numbers_only = [s for s in encoded if s.isdigit()]
+	#print numbers_only
+	
+	#number_values = map(int, numbers_only) # converts string to list
+	#print number_values
+	
+	
+	
+	#print map(int, encoded)
+	
+	#print [i for i, x in enumerate(encoded) if x == [0,9]]
+	
+	#numbers_only = [s for s in encoded if s.isdigit()] # creates string with numbers only, 
+	# but they're not left in the original order
+	
+	#print numbers_only # Numbers are still strings and not int
+	
+	
+	#print encoded[(4+1)] + encoded[6] # this will work to print the decoded message
+	
+	#if  s.isdigit(encoded):
+	
+	
+	#print [s for s in encoded if s.isdigit()]
+	
+	
+	
+	#number_values = map(int, numbers_only) # converts string to list
+	#print number_values
+	#print type(number_values)
+	
+	#print encoded[number_values]
+	
+	#if num in encoded:
+	#	num = x
+	#	print encoded[x]
+	
+	#decode = re.findall('\d', encoded) # will need try, except for when error returned
+	#decode_string = map(int, decode)
+	
+	#print encoded[decode_string]
+	
+	
+	#print int(filter(str.isdigit, encoded))
+	
+	#[int(s) for s in str.split(encoded) if s.isdigit()]
+	
+	
+	#print encoded[3]
+
+
+	
+	
+	
+	# for int in encoded:
+
+
