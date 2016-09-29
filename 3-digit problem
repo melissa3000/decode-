@@ -1,0 +1,43 @@
+# 2xyz would be decoded as z
+# 0h2zyi2467 would be hi7
+
+# create a function called plaintext that decodes a string
+
+
+def plaintext(encoded_string):
+
+	result = " " # creates empty string called result
+
+	
+	for val in encoded_string:
+		if (ord(val) >= 48 and ord(val) <= 57): #uses unicode to refer to 0-9 (unicode
+		#lets you skip the issue of int vs string)
+			
+			skip = int(val) # skip equals val converted to an integer (pulls the number out
+			#of the string and turns it into an integer)
+			
+			print skip
+			print "WHY????????" # why does the second 2 get stuck here?
+
+		else:
+			if skip == 0:
+				result = result + val
+				print result
+				print "current"
+
+			else:
+				skip = skip - 1 #counts down until the value is 0 then prints the result
+				print skip
+				print "YEAH!"
+				continue
+
+ #How do I get it to print the 7 in the example at the top of the page?
+
+	print result
+
+print "Result 1:"
+plaintext("0h2zyi2467") #hi7
+print "Result 2:"
+plaintext("2xyz") #z
+print "Result 3:"
+plaintext("0h2abe1zy") #hey
